@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Antonella 🌻</title>
+    <title>Para Antonella ✨💛</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Monsieur+La+Doulaise&family=Quicksand:wght@500&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -30,33 +30,56 @@
             border: 3px solid #ffeb3b;
         }
 
+        /* TIPOGRAFÍA CURSIVA DE LUJO PARA EL NOMBRE */
         h1 {
             color: #b38b00;
-            margin-bottom: 10px;
-            font-size: 2.8rem;
-            font-family: 'Dancing Script', cursive;
+            margin-bottom: 0px;
+            font-size: 4.8rem; 
+            font-family: 'Monsieur La Doulaise', cursive;
+            font-weight: 400;
+            line-height: 0.9;
         }
 
-        .foto-graffiti {
-            width: 110%;
-            margin-left: -5%;
-            position: relative;
-            z-index: 10;
-            filter: drop-shadow(0 0 10px rgba(255, 87, 34, 0.5));
-            animation: glow 2s infinite alternate ease-in-out;
+        .corazones {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .corazon-animado {
+            display: inline-block;
+            animation: floating 3s infinite ease-in-out;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); filter: drop-shadow(0 0 5px gold); }
+            50% { transform: translateY(-15px); filter: drop-shadow(0 0 15px yellow); }
+            100% { transform: translateY(0px); filter: drop-shadow(0 0 5px gold); }
+        }
+
+        .te-amo {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffb300;
+            margin-bottom: 20px;
+            display: block;
+            text-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+            animation: pulse 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); opacity: 0.9; }
+            to { transform: scale(1.08); opacity: 1; }
         }
 
         .foto-flores {
             width: 100%;
             border-radius: 20px;
-            margin-top: -15px; 
+            margin-top: 10px; 
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             filter: drop-shadow(0 0 12px rgba(255, 235, 59, 0.4));
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 5px rgba(255, 87, 34, 0.4)); transform: scale(1); }
-            to { filter: drop-shadow(0 0 20px rgba(255, 87, 34, 0.8)); transform: scale(1.03); }
         }
 
         .mensaje {
@@ -68,11 +91,10 @@
             font-style: italic;
         }
 
-        .spotify-frame {
+        .spotify-container {
             margin-top: 10px;
-            border-radius: 15px;
+            border-radius: 12px;
             overflow: hidden;
-            background-color: #282828; /* Fondo oscuro mientras carga */
             height: 80px;
         }
     </style>
@@ -80,21 +102,25 @@
 <body>
 
     <div class="card">
-        <h1>Antonella TE AMO</h1>
+        <h1>Antonella</h1>
 
-        <img src="graffiti.png" alt="Graffiti" class="foto-graffiti">
+        <div class="corazones">
+            <span class="corazon-animado" style="animation-delay: 0s;">💛</span>
+            <span class="corazon-animado" style="animation-delay: 0.4s;">💛</span>
+            <span class="corazon-animado" style="animation-delay: 0.8s;">💛</span>
+        </div>
 
-        <img src="flores.jpg" alt="Flores Amarillas" class="foto-flores">
+        <span class="te-amo">Te amo</span>
+
+        <img src="flores.jpg.png" alt="Flores Amarillas" class="foto-flores">
 
         <p class="mensaje">"Sé que hay mil razones por las que no podemos estar juntos, pero te equivocas."</p>
 
-        <div class="spotify-frame">
-            <iframe style="border-radius:12px" 
-                src="http://googleusercontent.com/spotify.com/7" 
-                width="100%" height="80" 
-                frameBorder="0" 
-                allowfullscreen="" 
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        <div class="spotify-container">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" 
+                src="https://open.spotify.com/embed/track/6nO4GQcIbJGjBWb0o7pWAh?utm_source=generator" 
+                width="100%" height="80" frameBorder="0" 
+                allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
                 loading="lazy">
             </iframe>
         </div>
